@@ -1,29 +1,29 @@
-{
-  "expo": {
-    "name": "loginFirebase3bgb",
-    "slug": "loginFirebase3bgb",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "newArchEnabled": true,
-    "splash": {
-      "image": "./assets/splash-icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      },
-      "edgeToEdgeEnabled": true
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    }
-  }
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+
+import Login from './screens/Login'
+import Cadastro from './screens/Cadastro'
+import Home from './screens/Home'
+
+const Stack = createNativeStackNavigator()
+
+export default function App(){
+  return(
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name='Login'
+          component={Login}
+        />
+        <Stack.Screen
+          name='Cadastro'
+          component={Cadastro}
+        />
+        <Stack.Screen
+          name='Home'
+          component={Home}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
 }
